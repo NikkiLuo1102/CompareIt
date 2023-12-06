@@ -238,11 +238,11 @@ def send_verification_email(receiver_mail, verification_token, user_id):
 @app.route("/profile")
 def profile():
     server_params = {
-        "dbname": "sf23",
+        "dbname": os.getenv('db_user'),
         "host": "db.doc.ic.ac.uk",
         "port": "5432",
-        "user": "sf23",
-        "password": "3048=N35q4nEsm",
+        "user": os.getenv('db_user'),
+        "password": os.getenv('db_Password'),
         "client_encoding": "utf-8",
     }
     if "user" in session:
